@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  pgnetflix:
+    image: postgres:alpine
+    ports:
+      - '5434:5434'
+    container_name: 'pgnetflix'
+    restart: always
+    volumes:
+      - pg-net:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+
+volumes:
+  pg-net:
